@@ -256,3 +256,19 @@ a { color: inherit; }
 
   .bar { bottom: 12px; width: calc(100% - 24px); height: 46px; }
 }
+
+/* mobile letter: one tile per paragraph instead of one tall wall */
+@media (max-width: 760px) {
+  #letter .card { background: transparent; padding: 0; gap: 6px; }
+  #letter .panel { padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  #letter .group, #letter .card-head { margin: 0; }
+  #letter .prose { display: flex; flex-direction: column; gap: 6px; }
+  #letter .card-head,
+  #letter .prose p,
+  #letter .group:not(.prose) { background: var(--card); padding: 18px 18px; margin: 0; }
+  #letter .card-head { padding: 22px 18px 20px; }
+  #letter .prose p { font-size: 15px; line-height: 1.5; }
+  #letter .prose p:first-child { font-size: 17px; line-height: 1.4; color: var(--card-ink); }
+  #letter .sign { padding: 14px 18px; }
+}
+@media (max-width: 760px) { main { gap: 56px; } }
