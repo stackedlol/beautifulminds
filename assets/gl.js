@@ -146,16 +146,23 @@ void main(){
   float rows = 150.;
   float row = floor(uv.y*rows);
   // row bleed: whole rows slide sideways, harder in drifting bands
-  float gate = smoothstep(.45, .9, vn(vec2(row*.045, uT*.22 + 7.)));
-  float jit = (vn(vec2(row*.37, uT*.9)) - .5) * .06 * gate;
+  float gate = smoothstep(.32, .82, vn(vec2(row*.045, uT*.3 + 7.)));
+  float jit = (vn(vec2(row*.37, uT*1.1)) - .5) * .12 * gate;
+  jit += sin(row*.055 + uT*.9) * .02 * gate;                        // slow swell through the drifting bands
   vec2 q = vec2(abs(uv.x - .5)*2. + jit, uv.y);
+  // liquid: a slow flow field pushes the shapes around so they ooze rather than sit
+  vec2 flow = vec2(fbm(q*2.6 + vec2(0., uT*.22)), fbm(q*2.6 + vec2(5.2, -uT*.18))) - .5;
+  q += flow*.05;
   float s = 0., ws = 0.;
   for (int i = 0; i < 5; i++){                                          // smear outward
     float fi = float(i); float w = exp(-fi*.55);
-    s += w*field(vec2(abs(q.x - fi*.013*(1. + 2.*gate)), q.y)); ws += w;
+    s += w*field(vec2(abs(q.x - fi*.016*(1. + 3.*gate)), q.y)); ws += w;
   }
   s /= ws;
-  gl_FragColor = vec4(flat3(s), 1.);
+  // wider dither where inks meet than flat3 gives, so edges read as poured, not cut
+  float pos = clamp((s - .527)*3.6 + 1., 0., 2.);   // same ink centres as flat3, softer slope
+  float k = floor(pos + bayer8(gl_FragCoord.xy/uCell));
+  gl_FragColor = vec4(k < .5 ? CORAL : k < 1.5 ? YELLOW : PINK, 1.);
 }`;
 
 export const BAR = COMMON + `
