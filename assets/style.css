@@ -287,3 +287,8 @@ a { color: inherit; }
   #letter .card-head + .prose { margin-top: -6px; }
   #letter .prose p + p { border-top: 0; }
 }
+/* mobile field: explicit height. Safari collapses an empty grid item sized only by
+   aspect-ratio when the grid stretches it, so don't rely on aspect-ratio here. */
+@media (max-width: 760px) {
+  #letter .view { align-self: start; aspect-ratio: auto; height: calc((100vw - 24px) * 0.6875); min-height: 200px; }
+}
