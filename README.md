@@ -52,22 +52,22 @@ $ node scripts/ledger.mjs verify
   received $940.47 · given $412.37 · still to give $528.10
 ```
 
-### 4 · A vault that can only pay charities
+### 4 · The same promise as a smart contract
 
-[`contracts/src/PledgeVault.sol`](contracts/src/PledgeVault.sol) is a smart contract that holds the
-money in USDC (a digital dollar). Once money is in, **the code only lets it go to a charity**. There's
-no withdraw button, not even for me.
+[`contracts/src/PayoutPledge.sol`](contracts/src/PayoutPledge.sol) writes the pledge in code
+that nobody can edit, me included, once it's on a public blockchain.
 
 ```solidity
-function deposit(uint256 amount) external;              // anyone can add to the pool
-function give(address charity, uint256 amount);        // the only way out: to a listed charity
-function listCharity(address charity, string name);     // new charities wait 7 days, in public
-function end(string reason);                            // I can stop, but nothing comes back out
-function release() external;                            // if I go quiet for a year, anyone can
-                                                        // send what's left to charity
+uint16 public immutable shareBps;              // 10000 = 100% of every payout. Fixed forever.
+
+function recordPayout(...) external;           // money in from X
+function recordGrant(...)  external;           // money out, with who got it and the receipt
+function outstandingCents() external view;     // anyone can read what's still to give
+function end(string reason) external;          // I can stop, but only in public
+function anchor(uint256 seq, bytes32 head);    // pins this ledger so history can't be rewritten
 ```
 
-Written and tested (6 passing tests). Not deployed yet.
+Written and tested (7 passing tests). Not deployed yet.
 
 ## What it can't do
 
