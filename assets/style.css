@@ -100,6 +100,9 @@ a { color: inherit; }
 .sign { display: flex; align-items: center; gap: 18px; padding-top: 6px; }
 .sign .mark { height: 42px; width: auto; display: block; }
 .sign strong { white-space: nowrap; font: 400 clamp(36px, 5vw, 46px)/1 "Mrs Saint Delafield", cursive; color: var(--card-ink); letter-spacing: 0; margin-top: 6px; }
+.sign .gh { margin-left: auto; color: var(--card-ink); opacity: .9; transition: opacity 300ms var(--ease); }
+.sign .gh:hover { opacity: .55; }
+.sign .gh svg { width: 22px; height: 22px; display: block; }
 .sign span { font: 400 11px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--card-soft); margin-left: auto; }
 .rows dd { color: var(--card-ink); text-align: right; }
 
@@ -137,9 +140,7 @@ a { color: inherit; }
 .bar-in { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; gap: 8px; }
 .bar .chip { position: static; padding: 7px 8px; text-decoration: none; transition: background 300ms var(--ease), color 300ms var(--ease); }
 .bar nav { display: flex; gap: 6px; }
-.bar .gh { padding: 5px; color: #111; }
-.bar .gh svg { width: 15px; height: 15px; display: block; }
-.bar .gh:hover { background: #111; color: #fff; }
+
 .bar nav a { background: rgba(255, 255, 255, 0.55); color: #111; }
 .bar nav a:hover, .bar nav a[aria-current="true"] { background: #fff; }
 .bar nav a[aria-current="true"] i { background: var(--red); }
