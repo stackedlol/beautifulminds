@@ -1,0 +1,18 @@
+[
+  {
+    "seq": 0,
+    "kind": "pledge",
+    "date": "2026-11-19",
+    "amount": 0,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": null,
+    "note": "Pledge opened.",
+    "terms": {
+      "shareBps": 10000,
+      "statement": "Every X creator payout I receive, I give away to research, therapies and support for BPD, schizophrenia, autism, ADHD and other neurodivergent minds, when and where I choose. Every payout in, every dollar out, logged here with a receipt. If I ever stop, I'll say so here."
+    },
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "f681607886b9770be3e5aef23aeb9cacee28816a7c62e8f48ee16e1e5cf623a5"
+  }
+]

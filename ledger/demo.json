@@ -1,0 +1,83 @@
+[
+  {
+    "seq": 0,
+    "kind": "pledge",
+    "date": "2026-11-18",
+    "amount": 0,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": null,
+    "note": "Pledge opened.",
+    "terms": {
+      "shareBps": 10000,
+      "statement": "Every X creator payout I receive, I give away to research, therapies and support for BPD, schizophrenia, autism, ADHD and other neurodivergent minds, when and where I choose. Every payout in, every dollar out, logged here with a receipt. If I ever stop, I'll say so here."
+    },
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "d839aabc0d32ab942d288bb3cc8f1a456f5060412241a9128dc86f3bff12abdb"
+  },
+  {
+    "seq": 1,
+    "kind": "payout",
+    "date": "2026-11-28",
+    "amount": 41237,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": "X creator payout · Nov 2026",
+    "note": null,
+    "terms": null,
+    "prev": "d839aabc0d32ab942d288bb3cc8f1a456f5060412241a9128dc86f3bff12abdb",
+    "hash": "58d13a26727efb29fdb235c1f64cf63836b29d7825493c54bf6d0789bc496023"
+  },
+  {
+    "seq": 2,
+    "kind": "note",
+    "date": "2026-12-02",
+    "amount": 0,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": null,
+    "note": "DEMO DATA. Shortlist: BPD and schizophrenia research funds, DBT access programs.",
+    "terms": null,
+    "prev": "58d13a26727efb29fdb235c1f64cf63836b29d7825493c54bf6d0789bc496023",
+    "hash": "bb15554919278e9487ded7ed5bfcef3dadcce9a44dc2b66e200e2de1124e423b"
+  },
+  {
+    "seq": 3,
+    "kind": "grant",
+    "date": "2026-12-09",
+    "amount": 30000,
+    "currency": "USD",
+    "counterparty": "Example research fund (demo)",
+    "ref": "https://example.org/receipt/0001",
+    "note": null,
+    "terms": null,
+    "prev": "bb15554919278e9487ded7ed5bfcef3dadcce9a44dc2b66e200e2de1124e423b",
+    "hash": "70bc8cac5a6bbcb4dbd7f36fe8d5fd13e14e47c497732185f1179c4d97dcac67"
+  },
+  {
+    "seq": 4,
+    "kind": "grant",
+    "date": "2026-12-20",
+    "amount": 11237,
+    "currency": "USD",
+    "counterparty": "Example therapy access program (demo)",
+    "ref": "https://example.org/receipt/0002",
+    "note": null,
+    "terms": null,
+    "prev": "70bc8cac5a6bbcb4dbd7f36fe8d5fd13e14e47c497732185f1179c4d97dcac67",
+    "hash": "37e3b030a702112bab62604695431f9d3f7b5e2ac77e1113345b8780a0474e85"
+  },
+  {
+    "seq": 5,
+    "kind": "payout",
+    "date": "2026-12-29",
+    "amount": 52810,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": "X creator payout · Dec 2026",
+    "note": null,
+    "terms": null,
+    "prev": "37e3b030a702112bab62604695431f9d3f7b5e2ac77e1113345b8780a0474e85",
+    "hash": "26b62aa6004288609eb8f82ae6b9155e840ef1ce81fbc560adf3693bdacbafb2"
+  }
+]

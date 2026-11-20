@@ -1,0 +1,20 @@
+name: verify pledge
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 12 * * *" # daily, so an overdue payout fails CI even with no new commits
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: node scripts/ledger.mjs verify
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: cd contracts && forge test -vv

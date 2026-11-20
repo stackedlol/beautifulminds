@@ -1,0 +1,10 @@
+{
+  "name": "beautifulminds",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 3016 --bind 127.0.0.1",
+    "verify": "node scripts/ledger.mjs verify",
+    "ledger": "node scripts/ledger.mjs"
+  }
+}
