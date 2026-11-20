@@ -211,3 +211,48 @@ a { color: inherit; }
   .bar nav a { padding: 7px 6px; }
 }
 #record .group:last-child { margin-top: 18px; }
+
+/* ---------- mobile: compact, readable, nothing tall for the sake of it ---------- */
+@media (max-width: 760px) {
+  body { padding: 16px 12px 92px; }
+  main { gap: 16px; }
+  .card { gap: 0; padding: 10px; }
+  .panel, .card .panel { padding: 22px 10px 12px; }
+  .card-head { margin-bottom: 18px; }
+  .card-head h1, .card-head h2 { font-size: 30px; letter-spacing: -0.03em; }
+  .group { margin-bottom: 22px; }
+
+  /* letter: a wide strip of the field, not a tower */
+  #letter .view { aspect-ratio: 16 / 11; }
+  .prose p { font-size: 15px; line-height: 1.55; color: #d4d4da; margin-bottom: 12px; }
+  .rows { gap: 9px; }
+  .rows div { font-size: 12px; }
+  .sign { padding-top: 0; gap: 14px; }
+  .sign .mark { height: 34px; }
+  .sign strong { font-size: 36px; }
+
+  /* how it works: drawing as a thumbnail beside the words */
+  .how { padding: 22px 20px 8px; }
+  .how .card-head { margin-bottom: 4px; }
+  .steps { border-top: 0; }
+  .step, .step + .step {
+    display: grid; grid-template-columns: 92px 1fr; column-gap: 16px; align-items: start;
+    padding: 18px 0; border-left: 0;
+  }
+  .step + .step { border-top: 1px solid var(--card-hair); }
+  .step svg { grid-row: 1 / span 3; margin: 4px 0 0; max-width: none; }
+  .step .num { grid-column: 2; }
+  .step h3 { grid-column: 2; font-size: 20px; margin: 6px 0 6px; }
+  .step p { grid-column: 2; font-size: 14px; line-height: 1.5; }
+
+  /* record: numbers first, then the list, no empty box */
+  .ledger-view { order: 0; min-height: 0; margin-top: 4px; }
+  .entries { padding: 0 0 8px; overflow: visible; }
+  .entries li { padding: 12px 14px; }
+  .checked { position: static; margin: 4px 14px 14px; align-self: flex-start; }
+  .cells { grid-template-columns: repeat(32, 1fr); gap: 2px; margin-top: 16px; }
+  .cells i { height: 10px; }
+  #record .group:last-child { margin-top: 0; }
+
+  .bar { bottom: 12px; width: calc(100% - 24px); height: 46px; }
+}
