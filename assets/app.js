@@ -74,6 +74,8 @@ async function show(src) {
         ? "Changed after it was written"
         : e.kind === "pledge" ? `${(terms.shareBps ?? 10000) / 100}% of every payout, no deadline`
         : e.kind === "grant" ? `<a href="${esc(e.ref)}" target="_blank" rel="noopener">Receipt ↗</a>`
+        : e.kind === "payout"
+          ? [e.note && esc(e.note), /^https?:\/\//.test(e.ref ?? "") ? `<a href="${esc(e.ref)}" target="_blank" rel="noopener">Statement ↗</a>` : esc(e.ref ?? "")].filter(Boolean).join(" · ")
         : esc(e.kind === "note" || e.kind === "end" ? e.note : e.ref);
       const amt = e.kind === "payout" ? "+" + money(e.amount) : e.kind === "grant" ? "−" + money(e.amount) : "";
       return `<li class="${bad.has(e.seq) ? "bad" : ""}" style="animation-delay:${i * 50}ms">

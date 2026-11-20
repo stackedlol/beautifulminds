@@ -14,5 +14,18 @@
     },
     "prev": "0000000000000000000000000000000000000000000000000000000000000000",
     "hash": "f681607886b9770be3e5aef23aeb9cacee28816a7c62e8f48ee16e1e5cf623a5"
+  },
+  {
+    "seq": 1,
+    "kind": "payout",
+    "date": "2026-11-20",
+    "amount": 1500,
+    "currency": "USD",
+    "counterparty": null,
+    "ref": "https://beautifulmind.site/receipts/2026-10-18-x-money-welcome-gift.png",
+    "note": "Welcome gift, not a payout",
+    "terms": null,
+    "prev": "f681607886b9770be3e5aef23aeb9cacee28816a7c62e8f48ee16e1e5cf623a5",
+    "hash": "9615e29e5dfb36f9fd895d9f7a772b10d64fbab149916e37ac2db5a0a3eddcf6"
   }
 ]
