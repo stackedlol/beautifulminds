@@ -272,3 +272,13 @@ a { color: inherit; }
   #letter .sign { padding: 14px 18px; }
 }
 @media (max-width: 760px) { main { gap: 56px; } }
+@media (max-width: 760px) {
+  #letter .prose { gap: 0; }
+  #letter .prose p + p { border-top: 1px solid var(--card-hair); }
+}
+@media (max-width: 760px) {
+  main { gap: 96px; }
+  #letter .prose p { padding: 12px 18px; }
+  #letter .prose p:first-child { padding-top: 18px; }
+  #letter .prose p:last-child { padding-bottom: 18px; }
+}
