@@ -282,3 +282,8 @@ a { color: inherit; }
   #letter .prose p:first-child { padding-top: 18px; }
   #letter .prose p:last-child { padding-bottom: 18px; }
 }
+@media (max-width: 760px) {
+  #letter .card-head { padding-bottom: 6px; }
+  #letter .card-head + .prose { margin-top: -6px; }
+  #letter .prose p + p { border-top: 0; }
+}
